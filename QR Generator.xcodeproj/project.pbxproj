@@ -72,11 +72,11 @@
 			children = (
 				FD037D9A22C4ABB00066CB30 /* AppDelegate.swift */,
 				FD037D9C22C4ABB00066CB30 /* SceneDelegate.swift */,
-				FD037DA222C4ABB30066CB30 /* Preview Content */,
 				FD0C55A9239A91BC00172D0F /* Utilities */,
 				FD0C55A8239A91AE00172D0F /* Views */,
 				FD037DA022C4ABB30066CB30 /* Assets.xcassets */,
 				FD037DA822C4ABB30066CB30 /* Info.plist */,
+				FD037DA222C4ABB30066CB30 /* Preview Content */,
 			);
 			path = "QR Generator";
 			sourceTree = "<group>";
