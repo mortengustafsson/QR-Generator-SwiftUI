@@ -23,7 +23,7 @@ struct QRGeneratorView: View {
     var body: some View {
 
         let flyoutEffectBinding = Binding<Bool>( get: { self.animationDidFinish }, set: { self.updateBinding($0) })
-        let flyOutEffect = FlyOutEffect(pct: animate ? 1 : 0, offset: CGFloat(UIScreen.main.bounds.height), didFinish: flyoutEffectBinding)
+        let flyOutEffect = FlyOutEffect(pct: animate ? 1 : 0, didFinish: flyoutEffectBinding)
         
         return VStack {
             Spacer()

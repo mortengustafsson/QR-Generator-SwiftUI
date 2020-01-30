@@ -11,16 +11,14 @@ import SwiftUI
 struct FlyOutEffect: GeometryEffect {
 
     var pct: CGFloat
-    var offset: CGFloat
+
     @Binding var didFinish: Bool
 
-    var animatableData: AnimatablePair<CGFloat, CGFloat> {
-        get { return AnimatablePair<CGFloat, CGFloat>(offset, pct) }
-        set {
-            offset = newValue.first
-            pct = newValue.second
-        }
+    var animatableData: CGFloat {
+        get { return pct }
+        set { pct = newValue }
     }
+
 
     func effectValue(size: CGSize) -> ProjectionTransform {
         if pct == 1 {
@@ -30,11 +28,11 @@ struct FlyOutEffect: GeometryEffect {
         }
 
         var rotating = CATransform3DIdentity
-        rotating.m34 = -1.0 / 1000
+        rotating.m34 = -1/850
 
         rotating = CATransform3DRotate(rotating, (CGFloat.pi / 4) * pct, 1, 0, 0)
 
-        let translation = CATransform3DMakeTranslation(0, CGFloat(pct) * offset, 0)
+        let translation = CATransform3DMakeTranslation(0, CGFloat(pct) * CGFloat(UIScreen.main.bounds.height), 0)
 
         return ProjectionTransform(CATransform3DConcat(translation, rotating))
     }

@@ -32,7 +32,7 @@ extension InputView {
             static let accentColor = Color.red
         }
         enum Rectangle {
-            static let height: CGFloat = 2.0
+            static let height: CGFloat = 2
             static let color = Color.red
         }
     }
